@@ -1,17 +1,17 @@
 package koschei.config;
 
-import koschei.models.Island2;
-import koschei.models.Wood3;
+import koschei.business.components.impl.Island;
+import koschei.business.components.impl.Wood;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "koschei")
+@ComponentScan(basePackages = "koschei.business")
 public class AppConfig {
 
     @Bean
-    public static Island2 getIsland(Wood3 wood) {
-        return new Island2(wood);
+    public static Island getIsland(Wood wood) {
+        return new Island(wood);
     }
 }
